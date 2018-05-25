@@ -1,0 +1,12 @@
+    {{ define "response" }}
+    {{- $players := where .Data.Pages "Type" "players" -}}
+        {
+            "group" : "{{.Type}}::{{ .Title }}",
+            "count" : "{{ len $players }}"
+            ,"players" : [
+            {{ range $i, $e := $players }}
+                {{ if $i }}, {{ end }}{{ .Render "item" }}
+            {{ end }}
+            ]
+        }
+    {{ end }}

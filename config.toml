@@ -1,0 +1,21 @@
+baseURL = "http://hugo.api/"
+languageCode = "en-us"
+title = "rougon"
+
+[outputs]
+  page = ["json", "players"]
+  home = ["json"]
+  section = ["json"]
+  taxonomy = ["json", "players"]
+  taxonomyTerm = [ "json" ]
+
+[outputFormats.players]
+  baseName = "players"
+  mediatype ="application/json"
+
+[taxonomies]
+  sport = "sports"
+  practice = "practices"
+
+[permalinks]
+  page = "/:section/:title/"
